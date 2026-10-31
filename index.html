@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | IPL 2026 Ticket Booking</title>
+    <style>
+        * {
+            text-align: center;
+        }
+        section {
+            background-color: blue;
+            text-align: center;
+        }
+        section#hero {
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IPL 2026 Ticket Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Matches</a></li>
+                <li><a href="#">Book Ticket</a></li>
+                <li><a href="#">My Booking</a></li>
+                <li><a href="#">Guidelines</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <img src="images/ipl2026.jpg" alt="IPL 2026" width="100%">
+            <p>Experience The Stadium Energy Live!</p>
+            <button>View Schedule</button>
+            <button>Book Ticket</button>
+        </section>
+
+        <section>
+            <h2>About IPL 2026</h2>
+            <h3>Popular Teams</h3>
+            <ul>
+                <li>Chennai Super Kings</li>
+                <li>Royal Challengers Bengaluru</li>
+                <li>Mumbai Indians</li>
+                <li>Kolkata Knight Riders</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Match Schedule</h2>
+            <table border="3" cellspacing="0">
+                <tr>
+                    <th>Match</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Venue</th>
+                </tr>
+                <tr>
+                    <td>Chennai Super Kings vs Mumbai Indians</td>
+                    <td>March 1, 2026</td>
+                    <td>7:00 PM</td>
+                    <td>M. A. Chidambaram Stadium, Chennai</td>
+                </tr>
+                <tr>
+                    <td>Royal Challengers Bangalore vs Kolkata Knight Riders</td>
+                    <td>March 2, 2026</td>
+                    <td>7:00 PM</td>
+                    <td>M. Chinnaswamy Stadium, Bangalore</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <form>
+                <label for="name">Name:</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                >
+                <br>
+
+                <label for="email">Email:</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required
+                >
+                <br>
+
+                <label for="match">Select Match:</label>
+                <select>
+                    <option value="CSK vs MI">Chennai Super Kings vs Mumbai Indians</option>
+                    <option value="RCB vs KKR">Royal Challengers Bangalore vs Kolkata Knight Riders</option>
+                </select>
+                <br>
+
+                <input 
+                  type="radio" 
+                  id="vip" 
+                  name="stand_category" 
+                  value="VIP" 
+                  required
+                >
+                <label for="vip">VIP</label><br>
+
+                <button type="submit">Book Ticket</button>
+            </form>
+        </section>
+    </main>
+    <section>
+        <h2>Guidelines for Attendees</h2>
+        <p>Please arrive at least 30 minutes before the match. Carry a valid ID proof along with your ticket.</p>
+        
+        <h2>Safety Measures</h2>
+        <p>Follow all safety protocols, including wearing masks and maintaining social distancing.</p>
+        
+        <h2>Contact Us</h2>
+        <p>For any queries, please contact our support team at<br>support@ipl2026.in</p>
+    </section>
+    <footer>
+        <p>&copy; 2026 IPL Ticket Booking. All rights reserved.</p>
+    </footer>
+</body>
+</html>
