@@ -1,0 +1,337 @@
+
+/* IPL Ticket Booking Website - CSS Styling */
+
+/* 1. Theme Variables */
+:root {
+    --primary: #101b3f;
+    --accent: #f5b82e;
+    --background: #f4f6fb;
+    --text: #252b3b;
+    --white: #ffffff;
+}
+
+/* 2. General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+section {
+    padding: 55px 8%;
+}
+
+section h2 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+/* 3. Navigation Bar */
+header {
+    background-color: var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+}
+
+nav h2 {
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* 4. Hero Section */
+#hero {
+    margin-top: 65px;
+    min-height: 450px;
+    background: linear-gradient(135deg, #101b3f, #263f78);
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+#hero a {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#hero a:hover {
+    background-color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* 5. About Section */
+#about {
+    background-color: var(--white);
+}
+
+#about h3 {
+    color: var(--primary);
+    margin: 20px 0 10px;
+}
+
+#about ul {
+    padding-left: 25px;
+}
+
+#about li {
+    margin-bottom: 8px;
+}
+
+/* 6. Match Schedule Table */
+#matches {
+    background-color: var(--background);
+}
+
+label {
+    font-weight: bold;
+}
+
+select,
+input {
+    padding: 10px;
+    border: 1px solid #ccd1dc;
+    border-radius: 5px;
+    margin: 8px 0 15px;
+    font-size: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--white);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 14px;
+}
+
+td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #fff4d8;
+}
+
+td a {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* 7. Booking Section */
+#booking {
+    background-color: var(--white);
+}
+
+.booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+form {
+    background-color: var(--background);
+    padding: 25px;
+    border-radius: 10px;
+    width: 55%;
+    min-width: 280px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+form label {
+    display: block;
+}
+
+form input,
+form select {
+    width: 100%;
+}
+
+form button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 13px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* 8. Booking Summary Card */
+.summary-card {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.summary-card p {
+    margin-bottom: 12px;
+}
+
+/* 9. My Bookings */
+#my-bookings {
+    background-color: var(--background);
+}
+
+/* 10. Guidelines Cards */
+#guidelines {
+    background-color: var(--white);
+}
+
+.guidelines-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.guidelines-container article {
+    background-color: var(--background);
+    padding: 25px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 220px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--accent);
+}
+
+.guidelines-container article h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+/* 11. Footer */
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 22px;
+}
+
+/* 12. Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #hero {
+        margin-top: 110px;
+        padding: 50px 20px;
+    }
+
+    #hero h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    form,
+    .summary-card {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
