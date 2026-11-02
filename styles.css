@@ -1,0 +1,251 @@
+
+/* ==============================
+   IPL TICKET BOOKING WEBSITE
+   Theme: Dark Blue and Gold
+================================ */
+
+/* 1. CSS Variables */
+:root {
+    --primary: #071952;
+    --secondary: #0B2D5C;
+    --accent: #F5C542;
+    --background: #F4F6FA;
+    --text: #222222;
+    --white: #FFFFFF;
+}
+
+/* 2. General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* 3. Navigation Bar */
+nav {
+    background-color: var(--primary);
+    padding: 18px 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* 4. Hero / Banner Section */
+.hero {
+    min-height: 450px;
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary),
+        #164B8C
+    );
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+/* 5. Buttons */
+button,
+.btn,
+.hero a {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
+
+button:hover,
+.btn:hover,
+.hero a:hover {
+    background-color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* 6. General Sections */
+section {
+    padding: 55px 8%;
+}
+
+section h2 {
+    color: var(--primary);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+/* 7. Team and Venue Lists */
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* 8. Tables / Match Schedule */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    margin: 25px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 15px;
+}
+
+td {
+    padding: 13px;
+    text-align: center;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+tr:hover td {
+    background-color: #FFF8DF;
+}
+
+/* 9. Cards */
+.card {
+    background-color: var(--white);
+    padding: 25px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* 10. Booking Form */
+form {
+    max-width: 550px;
+    margin: 25px auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* 11. Footer */
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 12. Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 35px 5%;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
