@@ -1,7 +1,4 @@
 
-/* IPL Ticket Booking Website - CSS Styling */
-
-/* 1. Theme Variables */
 :root {
     --primary: #101b3f;
     --accent: #f5b82e;
@@ -335,3 +332,80 @@ footer {
         white-space: nowrap;
     }
 }
+
+/* Activity 3 - Ticket Booking Form */
+
+.booking-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    color: #172554;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.booking-container h2 {
+    text-align: center;
+    color: #d97706;
+    margin-bottom: 10px;
+}
+
+.booking-container p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.booking-container form > label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.booking-container input:not([type="radio"]):not([type="checkbox"]),
+.booking-container select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.booking-container fieldset {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.booking-container fieldset label {
+    display: block;
+    margin: 10px 0;
+}
+
+.booking-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.booking-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #d97706;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.booking-buttons button[type="reset"] {
+    background: #172554;
+}
+
+.booking-buttons button:hover {
+    opacity: 0.85;
+}
+
