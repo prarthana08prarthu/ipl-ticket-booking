@@ -1,4 +1,5 @@
 
+/* 1. CSS Variables */
 :root {
     --primary: #101b3f;
     --accent: #f5b82e;
@@ -55,7 +56,7 @@ nav {
     padding: 15px 8%;
 }
 
-nav h2 {
+nav .logo h2 {
     color: var(--accent);
 }
 
@@ -90,6 +91,7 @@ nav ul li a:hover {
 }
 
 #hero h1 {
+    color: var(--white);
     font-size: 42px;
     margin-bottom: 15px;
 }
@@ -99,7 +101,13 @@ nav ul li a:hover {
     margin-bottom: 25px;
 }
 
-#hero a {
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-buttons a {
     display: inline-block;
     background-color: var(--accent);
     color: var(--primary);
@@ -111,7 +119,7 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
-#hero a:hover {
+.hero-buttons a:hover {
     background-color: var(--white);
     transform: translateY(-3px);
 }
@@ -119,6 +127,10 @@ nav ul li a:hover {
 /* 5. About Section */
 #about {
     background-color: var(--white);
+}
+
+#about p {
+    margin-bottom: 20px;
 }
 
 #about h3 {
@@ -134,9 +146,16 @@ nav ul li a:hover {
     margin-bottom: 8px;
 }
 
-/* 6. Match Schedule Table */
+/* 6. Match Schedule */
 #matches {
     background-color: var(--background);
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 label {
@@ -178,7 +197,7 @@ tbody tr:hover {
     background-color: #fff4d8;
 }
 
-td a {
+.book-btn {
     display: inline-block;
     background-color: var(--accent);
     color: var(--primary);
@@ -186,81 +205,134 @@ td a {
     padding: 7px 14px;
     border-radius: 5px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
-/* 7. Booking Section */
-#booking {
-    background-color: var(--white);
-}
-
-.booking-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 35px;
-    flex-wrap: wrap;
-}
-
-form {
-    background-color: var(--background);
-    padding: 25px;
-    border-radius: 10px;
-    width: 55%;
-    min-width: 280px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-
-form label {
-    display: block;
-}
-
-form input,
-form select {
-    width: 100%;
-}
-
-form button {
+.book-btn:hover {
     background-color: var(--primary);
     color: var(--white);
-    border: none;
-    padding: 13px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
 }
 
-form button:hover {
-    background-color: var(--accent);
-    color: var(--primary);
-}
-
-/* 8. Booking Summary Card */
-.summary-card {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 25px;
-    border-radius: 10px;
-    width: 30%;
-    min-width: 250px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.summary-card h3 {
-    color: var(--accent);
-    margin-bottom: 15px;
-}
-
-.summary-card p {
-    margin-bottom: 12px;
-}
-
-/* 9. My Bookings */
+/* 7. My Bookings */
 #my-bookings {
     background-color: var(--background);
 }
 
-/* 10. Guidelines Cards */
+.center-button {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* 8. Booking Form Page */
+.booking-container {
+    max-width: 600px;
+    margin: 110px auto 50px;
+    padding: 30px;
+    background-color: var(--white);
+    color: var(--text);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.booking-container h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.booking-container > p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.booking-container form {
+    width: 100%;
+    min-width: 0;
+    background-color: var(--background);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.booking-container form > label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+
+.booking-container form input:not([type="radio"]):not([type="checkbox"]),
+.booking-container form select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.booking-container fieldset {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.booking-container fieldset legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.booking-container fieldset label {
+    display: block;
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+.booking-container fieldset input {
+    margin-right: 8px;
+}
+
+.booking-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.booking-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.booking-buttons button[type="reset"] {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.booking-buttons button:hover {
+    opacity: 0.85;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    color: #d97706;
+}
+
+/* 9. Guidelines Cards */
 #guidelines {
     background-color: var(--white);
 }
@@ -287,7 +359,7 @@ form button:hover {
     margin-bottom: 12px;
 }
 
-/* 11. Footer */
+/* 10. Footer */
 footer {
     background-color: var(--primary);
     color: var(--white);
@@ -295,8 +367,9 @@ footer {
     padding: 22px;
 }
 
-/* 12. Responsive Design */
+/* 11. Responsive Design */
 @media (max-width: 768px) {
+
     nav {
         flex-direction: column;
         gap: 12px;
@@ -309,7 +382,7 @@ footer {
     }
 
     #hero {
-        margin-top: 110px;
+        margin-top: 120px;
         padding: 50px 20px;
     }
 
@@ -321,9 +394,18 @@ footer {
         padding: 40px 5%;
     }
 
-    form,
-    .summary-card {
-        width: 100%;
+    .booking-container {
+        width: 92%;
+        padding: 20px;
+        margin-top: 150px;
+    }
+
+    .booking-container form {
+        padding: 18px;
+    }
+
+    .booking-buttons {
+        flex-direction: column;
     }
 
     table {
@@ -331,81 +413,8 @@ footer {
         overflow-x: auto;
         white-space: nowrap;
     }
+
+    .guidelines-container {
+        flex-direction: column;
+    }
 }
-
-/* Activity 3 - Ticket Booking Form */
-
-.booking-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    background: #ffffff;
-    color: #172554;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.booking-container h2 {
-    text-align: center;
-    color: #d97706;
-    margin-bottom: 10px;
-}
-
-.booking-container p {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.booking-container form > label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 7px;
-    font-weight: bold;
-}
-
-.booking-container input:not([type="radio"]):not([type="checkbox"]),
-.booking-container select {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-.booking-container fieldset {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-}
-
-.booking-container fieldset label {
-    display: block;
-    margin: 10px 0;
-}
-
-.booking-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.booking-buttons button {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background: #d97706;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.booking-buttons button[type="reset"] {
-    background: #172554;
-}
-
-.booking-buttons button:hover {
-    opacity: 0.85;
-}
-
