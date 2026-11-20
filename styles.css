@@ -1,5 +1,10 @@
 
 /* =========================================
+   IPL 2026 TICKET BOOKING WEBSITE
+   COMPLETE styles.css
+========================================= */
+
+/* =========================================
    1. CSS VARIABLES AND GLOBAL STYLES
 ========================================= */
 
@@ -13,6 +18,7 @@
     --muted: #687086;
     --border: #dce1eb;
     --success: #16834a;
+    --danger: #dc3545;
     --shadow: 0 5px 20px rgba(16, 27, 63, 0.09);
 }
 
@@ -40,8 +46,13 @@ a {
 
 button,
 input,
-select {
+select,
+textarea {
     font: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* =========================================
@@ -210,7 +221,7 @@ select {
 
 .section {
     padding: 75px 7%;
-    scroll-margin-top: 70px;
+    scroll-margin-top: 85px;
 }
 
 .section-light {
@@ -287,6 +298,11 @@ select {
 .filter-container select {
     width: auto;
     min-width: 220px;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    color: var(--text);
 }
 
 .table-container {
@@ -409,6 +425,10 @@ select {
     border: 0;
 }
 
+.preference-field legend {
+    margin-bottom: 10px;
+}
+
 .choice-group {
     display: flex;
     flex-wrap: wrap;
@@ -486,7 +506,19 @@ select {
 }
 
 /* =========================================
-   10. SEPARATE BOOKING PAGE
+   10. MY BOOKINGS SECTION
+========================================= */
+
+.my-bookings {
+    background: var(--background);
+}
+
+.my-bookings .table-container {
+    margin-top: 20px;
+}
+
+/* =========================================
+   11. SEPARATE BOOKING PAGE
 ========================================= */
 
 .booking-page {
@@ -518,7 +550,7 @@ select {
 }
 
 /* =========================================
-   11. GUIDELINES CARDS
+   12. GUIDELINES CARDS
 ========================================= */
 
 .guidelines-container {
@@ -560,7 +592,7 @@ select {
 }
 
 /* =========================================
-   12. FOOTER
+   13. FOOTER
 ========================================= */
 
 .footer {
@@ -580,10 +612,42 @@ select {
 }
 
 /* =========================================
-   13. RESPONSIVE DESIGN
+   14. ACTIVITY 5 - TOAST NOTIFICATION
+========================================= */
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    max-width: calc(100% - 40px);
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* =========================================
+   15. RESPONSIVE DESIGN - TABLETS
 ========================================= */
 
 @media (max-width: 900px) {
+
     .navbar {
         padding: 12px 4%;
     }
@@ -607,9 +671,18 @@ select {
     .summary-card {
         position: static;
     }
+
+    .guidelines-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
+/* =========================================
+   16. RESPONSIVE DESIGN - MOBILE
+========================================= */
+
 @media (max-width: 650px) {
+
     .navbar {
         position: sticky;
         flex-direction: column;
@@ -678,5 +751,30 @@ select {
 
     .booking-page {
         padding-top: 20px;
+    }
+
+    .toast {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: none;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   17. ACCESSIBILITY - REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }

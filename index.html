@@ -24,19 +24,26 @@
     </header>
 
     <main>
+
         <!-- Hero Banner -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <p class="hero-tag">INDIAN PREMIER LEAGUE 2026</p>
                 <h1>Experience The Stadium Energy Live!</h1>
+
                 <p>
                     Support your favourite team, enjoy exciting matches
                     and experience the thrill of IPL cricket.
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#matches" class="btn btn-primary">View Schedule</a>
-                    <a href="#booking" class="btn btn-outline">Book Ticket</a>
+                    <a href="#matches" class="btn btn-primary">
+                        View Schedule
+                    </a>
+
+                    <a href="#booking" class="btn btn-outline">
+                        Book Ticket
+                    </a>
                 </div>
             </div>
         </section>
@@ -50,6 +57,7 @@
             </div>
 
             <div class="about-grid">
+
                 <article class="content-card">
                     <h3>Popular Teams</h3>
                     <ul>
@@ -73,11 +81,13 @@
                         <li>Sawai Mansingh Stadium, Jaipur</li>
                     </ul>
                 </article>
+
             </div>
         </section>
 
         <!-- Match Schedule -->
         <section id="matches" class="section section-light">
+
             <div class="section-heading">
                 <p class="section-tag">MATCH DETAILS</p>
                 <h2>IPL Match Schedule</h2>
@@ -86,6 +96,7 @@
 
             <div class="filter-container">
                 <label for="teamFilter">Filter by Team:</label>
+
                 <select id="teamFilter">
                     <option value="all">All Teams</option>
                     <option value="RCB">RCB</option>
@@ -99,6 +110,7 @@
 
             <div class="table-container">
                 <table class="data-table">
+
                     <thead>
                         <tr>
                             <th>Match No.</th>
@@ -113,6 +125,7 @@
                     </thead>
 
                     <tbody id="matchTableBody">
+
                         <tr data-teams="RCB CSK">
                             <td>01</td>
                             <td>RCB vs CSK</td>
@@ -121,7 +134,11 @@
                             <td>₹800</td>
                             <td>₹1,500</td>
                             <td>₹3,000</td>
-                            <td><a href="#booking" class="small-btn book-match" data-match="RCB vs CSK">Book</a></td>
+                            <td>
+                                <a href="#booking"
+                                   class="small-btn book-match"
+                                   data-match="RCB vs CSK">Book</a>
+                            </td>
                         </tr>
 
                         <tr data-teams="MI KKR">
@@ -132,7 +149,11 @@
                             <td>₹900</td>
                             <td>₹1,700</td>
                             <td>₹3,500</td>
-                            <td><a href="#booking" class="small-btn book-match" data-match="MI vs KKR">Book</a></td>
+                            <td>
+                                <a href="#booking"
+                                   class="small-btn book-match"
+                                   data-match="MI vs KKR">Book</a>
+                            </td>
                         </tr>
 
                         <tr data-teams="CSK MI">
@@ -143,7 +164,11 @@
                             <td>₹850</td>
                             <td>₹1,600</td>
                             <td>₹3,200</td>
-                            <td><a href="#booking" class="small-btn book-match" data-match="CSK vs MI">Book</a></td>
+                            <td>
+                                <a href="#booking"
+                                   class="small-btn book-match"
+                                   data-match="CSK vs MI">Book</a>
+                            </td>
                         </tr>
 
                         <tr data-teams="RCB SRH">
@@ -154,7 +179,11 @@
                             <td>₹800</td>
                             <td>₹1,500</td>
                             <td>₹3,000</td>
-                            <td><a href="#booking" class="small-btn book-match" data-match="RCB vs SRH">Book</a></td>
+                            <td>
+                                <a href="#booking"
+                                   class="small-btn book-match"
+                                   data-match="RCB vs SRH">Book</a>
+                            </td>
                         </tr>
 
                         <tr data-teams="KKR RR">
@@ -165,18 +194,28 @@
                             <td>₹900</td>
                             <td>₹1,700</td>
                             <td>₹3,500</td>
-                            <td><a href="#booking" class="small-btn book-match" data-match="KKR vs RR">Book</a></td>
+                            <td>
+                                <a href="#booking"
+                                   class="small-btn book-match"
+                                   data-match="KKR vs RR">Book</a>
+                            </td>
                         </tr>
+
                     </tbody>
                 </table>
             </div>
 
             <p id="filterMessage" class="form-message" aria-live="polite"></p>
-            <p class="sample-note">Note: Match dates and ticket prices are illustrative sample data for this project.</p>
+
+            <p class="sample-note">
+                Note: Match dates and ticket prices are illustrative sample data for this project.
+            </p>
+
         </section>
 
         <!-- Home Page Booking Form -->
         <section id="booking" class="section">
+
             <div class="section-heading">
                 <p class="section-tag">RESERVE YOUR SEAT</p>
                 <h2>Book Your IPL Tickets</h2>
@@ -186,6 +225,7 @@
             <div class="booking-layout">
 
                 <form id="homeBookingForm" class="booking-form">
+
                     <h3>Ticket Booking Form</h3>
 
                     <div class="form-group">
@@ -242,12 +282,14 @@
 
                     <fieldset class="form-group preference-field">
                         <legend>Additional Preferences:</legend>
+
                         <div class="choice-group">
                             <label>
                                 <input type="radio" name="homePreference"
                                        value="Regular Seating" required>
                                 Regular Seating
                             </label>
+
                             <label>
                                 <input type="radio" name="homePreference"
                                        value="Near Boundary">
@@ -264,17 +306,29 @@
                     </div>
 
                     <div class="form-buttons">
-                        <button type="submit" class="btn btn-primary">Submit Booking</button>
-                        <button type="reset" class="btn btn-reset">Reset Form</button>
+                        <button type="submit" class="btn btn-primary">
+                            Submit Booking
+                        </button>
+
+                        <button type="reset" class="btn btn-reset">
+                            Reset Form
+                        </button>
                     </div>
 
-                    <p id="homeBookingMessage" class="form-message" aria-live="polite"></p>
+                    <p id="homeBookingMessage"
+                       class="form-message"
+                       aria-live="polite"></p>
+
                 </form>
 
-                <!-- Booking Summary Card -->
+                <!-- Booking Summary -->
                 <aside class="summary-card">
+
                     <h3>Booking Summary</h3>
-                    <p class="summary-intro">Your selected ticket details will appear here.</p>
+
+                    <p class="summary-intro">
+                        Your selected ticket details will appear here.
+                    </p>
 
                     <div class="summary-row">
                         <span>Match</span>
@@ -300,17 +354,21 @@
                         <span>Total Amount</span>
                         <strong id="summaryTotal">₹0</strong>
                     </div>
+
                 </aside>
+
             </div>
 
             <p class="standalone-link">
                 For Activity 3, open the
                 <a href="booking.html">Separate IPL Booking Form</a>.
             </p>
+
         </section>
 
         <!-- My Ticket Bookings -->
         <section id="my-bookings" class="section section-light">
+
             <div class="section-heading">
                 <p class="section-tag">YOUR RESERVATIONS</p>
                 <h2>My Ticket Bookings</h2>
@@ -319,6 +377,7 @@
 
             <div class="table-container">
                 <table class="data-table">
+
                     <thead>
                         <tr>
                             <th>Booking ID</th>
@@ -337,12 +396,15 @@
                             </td>
                         </tr>
                     </tbody>
+
                 </table>
             </div>
+
         </section>
 
         <!-- Guidelines -->
         <section id="guidelines" class="section">
+
             <div class="section-heading">
                 <p class="section-tag">IMPORTANT INFORMATION</p>
                 <h2>Ticket Booking Guidelines</h2>
@@ -350,6 +412,7 @@
             </div>
 
             <div class="guidelines-container">
+
                 <article class="guideline-card">
                     <div class="guideline-icon">🎟️</div>
                     <h3>Ticket Verification</h3>
@@ -376,8 +439,11 @@
                         fireworks or other restricted objects.
                     </p>
                 </article>
+
             </div>
+
         </section>
+
     </main>
 
     <!-- Footer -->
@@ -386,8 +452,8 @@
         <p>Experience the excitement of IPL cricket!</p>
     </footer>
 
+    <!-- Existing Booking JavaScript -->
     <script>
-        // Sample ticket prices for each match and stand.
         const ticketPrices = {
             "RCB vs CSK": { General: 800, Premium: 1500, VIP: 3000 },
             "MI vs KKR": { General: 900, Premium: 1700, VIP: 3500 },
@@ -401,12 +467,10 @@
         const quantityField = document.getElementById("homeQuantity");
         const bookingForm = document.getElementById("homeBookingForm");
 
-        // Format amounts in Indian currency style.
         function formatPrice(amount) {
             return "₹" + amount.toLocaleString("en-IN");
         }
 
-        // Update booking summary.
         function updateSummary() {
             const match = matchField.value;
             const stand = standField.value;
@@ -438,7 +502,6 @@
         standField.addEventListener("change", updateSummary);
         quantityField.addEventListener("input", updateSummary);
 
-        // Reset summary when form is reset.
         bookingForm.addEventListener("reset", function () {
             setTimeout(function () {
                 updateSummary();
@@ -468,7 +531,7 @@
                 visibleCount === 0 ? "No matches found." : "";
         });
 
-        // Select the match when a Book button is clicked.
+        // Select match when Book button is clicked.
         document.querySelectorAll(".book-match").forEach(function (button) {
             button.addEventListener("click", function () {
                 matchField.value = this.dataset.match;
@@ -476,7 +539,6 @@
             });
         });
 
-        // Get saved bookings from localStorage.
         function getBookings() {
             try {
                 return JSON.parse(localStorage.getItem("iplBookings") || "[]");
@@ -485,7 +547,6 @@
             }
         }
 
-        // Display saved bookings in the table.
         function displayBookings() {
             const tbody = document.getElementById("myBookingsBody");
             const bookings = getBookings();
@@ -527,7 +588,6 @@
             });
         }
 
-        // Submit home page booking.
         bookingForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
@@ -568,16 +628,19 @@
                 displayBookings();
                 bookingForm.reset();
                 updateSummary();
+
             } catch (error) {
                 document.getElementById("homeBookingMessage").textContent =
                     "Unable to save the booking in this browser.";
             }
         });
 
-        // Load saved bookings when page opens.
         updateSummary();
         displayBookings();
     </script>
+
+    <!-- Activity 5: External JavaScript -->
+    <script src="app.js" defer></script>
 
 </body>
 </html>
