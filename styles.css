@@ -1,8 +1,9 @@
 
 /* =========================================
    IPL 2026 TICKET BOOKING WEBSITE
-   COMPLETE styles.css
+   COMPLETE RESPONSIVE STYLESHEET
 ========================================= */
+
 
 /* =========================================
    1. CSS VARIABLES AND GLOBAL STYLES
@@ -55,6 +56,11 @@ button {
     cursor: pointer;
 }
 
+section {
+    scroll-margin-top: 85px;
+}
+
+
 /* =========================================
    2. NAVIGATION BAR
 ========================================= */
@@ -81,26 +87,36 @@ button {
     letter-spacing: 1px;
 }
 
-.logo span {
+.logo:hover {
     color: var(--accent);
 }
 
 .navbar nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links {
+    list-style: none;
     display: flex;
     align-items: center;
     gap: 24px;
 }
 
-.navbar nav a {
+.nav-links a {
     color: var(--white);
     font-size: 14px;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
-.navbar nav a:hover {
+.nav-links a:hover {
     color: var(--accent);
 }
+
 
 /* =========================================
    3. HERO SECTION
@@ -115,6 +131,7 @@ button {
     align-items: center;
     text-align: center;
     color: var(--white);
+
     background: linear-gradient(
         120deg,
         rgba(16, 27, 63, 0.98),
@@ -126,8 +143,7 @@ button {
     max-width: 850px;
 }
 
-.hero-tag,
-.section-tag {
+.hero-content > p:first-child {
     color: var(--accent);
     font-size: 13px;
     font-weight: 800;
@@ -141,7 +157,7 @@ button {
     margin-bottom: 20px;
 }
 
-.hero-content > p:not(.hero-tag) {
+.hero-content > p:nth-of-type(2) {
     color: #e0e5f1;
     font-size: 17px;
     margin-bottom: 30px;
@@ -153,6 +169,7 @@ button {
     gap: 15px;
     flex-wrap: wrap;
 }
+
 
 /* =========================================
    4. BUTTONS
@@ -166,15 +183,12 @@ button {
     font-weight: 700;
     cursor: pointer;
     text-align: center;
+    background: var(--accent);
+    color: var(--primary);
     transition: 0.3s ease;
 }
 
-.btn-primary {
-    background: var(--accent);
-    color: var(--primary);
-}
-
-.btn-primary:hover {
+.btn:hover {
     background: #ffd36b;
     transform: translateY(-2px);
 }
@@ -190,30 +204,6 @@ button {
     color: var(--primary);
 }
 
-.btn-reset {
-    background: #e8eaf0;
-    color: var(--text);
-}
-
-.btn-reset:hover {
-    background: #d5d9e3;
-}
-
-.small-btn {
-    display: inline-block;
-    border: none;
-    border-radius: 5px;
-    background: var(--accent);
-    color: var(--primary);
-    padding: 8px 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.small-btn:hover {
-    background: #ffd36b;
-}
 
 /* =========================================
    5. COMMON SECTION STYLES
@@ -221,33 +211,36 @@ button {
 
 .section {
     padding: 75px 7%;
-    scroll-margin-top: 85px;
 }
 
-.section-light {
-    background: #eaf0fa;
-}
-
-.section-heading {
+.section-label {
+    color: #b47a00;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
     text-align: center;
-    margin-bottom: 35px;
 }
 
-.section-heading h2 {
+.section h2 {
     color: var(--primary);
     font-size: 32px;
-    margin-bottom: 8px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.section-heading > p:not(.section-tag) {
+.section > p:not(.section-label) {
     color: var(--muted);
+    text-align: center;
+    margin-bottom: 30px;
 }
+
 
 /* =========================================
    6. ABOUT IPL SECTION
 ========================================= */
 
-.about-grid {
+.about-container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
@@ -255,7 +248,7 @@ button {
     margin: auto;
 }
 
-.content-card {
+.about-card {
     background: var(--white);
     padding: 28px;
     border-radius: 12px;
@@ -263,20 +256,21 @@ button {
     border-top: 4px solid var(--accent);
 }
 
-.content-card h3 {
+.about-card h3 {
     color: var(--primary);
     margin-bottom: 18px;
     font-size: 21px;
 }
 
-.content-card ul {
+.about-card ul {
     padding-left: 22px;
 }
 
-.content-card li {
+.about-card li {
     margin-bottom: 11px;
     color: var(--text);
 }
+
 
 /* =========================================
    7. MATCH SCHEDULE AND TEAM FILTER
@@ -305,6 +299,20 @@ button {
     color: var(--text);
 }
 
+.filter-container select:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(29, 45, 92, 0.1);
+}
+
+#filterMessage {
+    color: var(--success);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    margin-bottom: 12px;
+}
+
 .table-container {
     width: 100%;
     overflow-x: auto;
@@ -313,61 +321,62 @@ button {
     box-shadow: var(--shadow);
 }
 
-.data-table {
+table {
     width: 100%;
     min-width: 850px;
     border-collapse: collapse;
     text-align: center;
 }
 
-.data-table th {
+table th {
     background: var(--primary);
     color: var(--white);
     padding: 15px 12px;
     font-size: 14px;
 }
 
-.data-table td {
+table td {
     padding: 14px 12px;
     border-bottom: 1px solid var(--border);
     font-size: 14px;
 }
 
-.data-table tbody tr:hover {
+table tbody tr:hover {
     background: #f7f8fc;
 }
 
-.data-table tbody tr:last-child td {
+table tbody tr:last-child td {
     border-bottom: none;
 }
 
-.data-table tbody tr[hidden] {
-    display: none;
+#matchTableBody a {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: 0.3s ease;
 }
 
-.empty-message {
-    color: var(--muted);
-    padding: 25px !important;
-    text-align: center;
+#matchTableBody a:hover {
+    background: #ffd36b;
+    transform: translateY(-2px);
 }
 
-.sample-note {
+.note {
     margin-top: 12px;
     color: var(--muted);
     font-size: 12px;
+    text-align: left;
 }
 
-.form-message {
-    color: var(--success);
-    font-weight: 700;
-    margin-top: 15px;
-}
 
 /* =========================================
-   8. BOOKING LAYOUT AND FORMS
+   8. BOOKING LAYOUT
 ========================================= */
 
-.booking-layout {
+.booking-container {
     display: grid;
     grid-template-columns: minmax(0, 1.5fr) minmax(270px, 0.8fr);
     gap: 25px;
@@ -376,16 +385,19 @@ button {
     margin: auto;
 }
 
-.booking-form,
-.summary-card {
+
+/* =========================================
+   9. BOOKING FORM
+========================================= */
+
+.booking-form-card {
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
     box-shadow: var(--shadow);
 }
 
-.booking-form h3,
-.summary-card h3 {
+.booking-form-card h3 {
     color: var(--primary);
     font-size: 22px;
     margin-bottom: 22px;
@@ -396,7 +408,7 @@ button {
 }
 
 .form-group > label,
-.preference-field legend {
+.form-group > p {
     display: block;
     color: var(--primary);
     font-weight: 700;
@@ -415,38 +427,27 @@ button {
 }
 
 .form-group input:focus,
-.form-group select:focus,
-.filter-container select:focus {
+.form-group select:focus {
     border-color: var(--primary-light);
     box-shadow: 0 0 0 3px rgba(29, 45, 92, 0.1);
 }
 
-.preference-field {
-    border: 0;
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    accent-color: var(--primary);
+    margin-right: 6px;
 }
 
-.preference-field legend {
-    margin-bottom: 10px;
-}
-
-.choice-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.choice-group label,
-.checkbox-group label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.form-group label:has(input[type="radio"]) {
+    display: inline-block;
+    margin-right: 18px;
     font-weight: 400;
     color: var(--text);
 }
 
-.choice-group input,
-.checkbox-group input {
-    accent-color: var(--primary);
+.form-group label:has(input[type="checkbox"]) {
+    font-weight: 400;
+    color: var(--text);
 }
 
 .form-buttons {
@@ -456,24 +457,49 @@ button {
     margin-top: 22px;
 }
 
+.form-buttons button[type="reset"] {
+    background: #e8eaf0;
+    color: var(--text);
+}
+
+.form-buttons button[type="reset"]:hover {
+    background: #d5d9e3;
+}
+
+#homeBookingMessage {
+    color: var(--success);
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+
 /* =========================================
-   9. BOOKING SUMMARY CARD
+   10. BOOKING SUMMARY CARD
 ========================================= */
 
 .summary-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
     border-top: 5px solid var(--accent);
     position: sticky;
     top: 95px;
 }
 
-.summary-intro {
-    color: var(--muted);
-    margin-top: -12px;
-    margin-bottom: 20px;
-    font-size: 14px;
+.summary-card h3 {
+    color: var(--primary);
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
-.summary-row {
+.summary-card > p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.summary-item {
     display: flex;
     justify-content: space-between;
     gap: 12px;
@@ -481,11 +507,11 @@ button {
     border-bottom: 1px solid var(--border);
 }
 
-.summary-row span {
+.summary-item span {
     color: var(--muted);
 }
 
-.summary-row strong {
+.summary-item strong {
     color: var(--primary);
     text-align: right;
 }
@@ -505,52 +531,48 @@ button {
     color: #b47a00;
 }
 
-/* =========================================
-   10. MY BOOKINGS SECTION
-========================================= */
-
-.my-bookings {
-    background: var(--background);
-}
-
-.my-bookings .table-container {
-    margin-top: 20px;
-}
 
 /* =========================================
-   11. SEPARATE BOOKING PAGE
+   11. SEPARATE BOOKING FORM LINK
 ========================================= */
 
-.booking-page {
-    padding-top: 70px;
-    min-height: calc(100vh - 130px);
+#booking > p:last-child {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--text);
 }
 
-.back-home {
-    max-width: 1100px;
-    margin: 25px auto 0;
-}
-
-.back-home a,
-.standalone-link a {
+#booking > p:last-child a {
     color: var(--primary);
     font-weight: 700;
     text-decoration: underline;
 }
 
-.back-home a:hover,
-.standalone-link a:hover {
+#booking > p:last-child a:hover {
     color: #b47a00;
 }
 
-.standalone-link {
-    text-align: center;
-    margin-top: 25px;
-    font-weight: 600;
-}
 
 /* =========================================
-   12. GUIDELINES CARDS
+   12. MY BOOKINGS SECTION
+========================================= */
+
+#my-bookings {
+    background: #eaf0fa;
+}
+
+#myBookingsBody td {
+    color: var(--text);
+}
+
+#myBookingsBody tr td[colspan="6"] {
+    color: var(--muted);
+    padding: 25px;
+}
+
+
+/* =========================================
+   13. GUIDELINES CARDS
 ========================================= */
 
 .guidelines-container {
@@ -575,7 +597,8 @@ button {
     transform: translateY(-5px);
 }
 
-.guideline-icon {
+.guideline-card span {
+    display: block;
     font-size: 38px;
     margin-bottom: 12px;
 }
@@ -591,28 +614,30 @@ button {
     font-size: 14px;
 }
 
+
 /* =========================================
-   13. FOOTER
+   14. FOOTER
 ========================================= */
 
-.footer {
+footer {
     background: var(--primary);
     color: var(--white);
     text-align: center;
     padding: 25px 15px;
 }
 
-.footer p {
+footer p {
     margin: 4px 0;
     font-size: 14px;
 }
 
-.footer p:last-child {
+footer p:last-child {
     color: #cbd2e4;
 }
 
+
 /* =========================================
-   14. ACTIVITY 5 - TOAST NOTIFICATION
+   15. ACTIVITY 5 - TOAST NOTIFICATION
 ========================================= */
 
 .toast {
@@ -620,19 +645,28 @@ button {
     bottom: 30px;
     right: 30px;
     max-width: calc(100% - 40px);
+
     background: var(--primary);
     color: var(--white);
+
     padding: 15px 25px;
     border-radius: 8px;
+
     font-size: 15px;
     font-weight: 600;
+
     opacity: 0;
     visibility: hidden;
+
     transform: translateY(20px);
-    transition: opacity 0.3s ease,
-                transform 0.3s ease,
-                visibility 0.3s ease;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
     z-index: 9999;
+
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -642,8 +676,22 @@ button {
     transform: translateY(0);
 }
 
+
 /* =========================================
-   15. RESPONSIVE DESIGN - TABLETS
+   16. FOCUS AND ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   17. RESPONSIVE DESIGN - TABLETS
 ========================================= */
 
 @media (max-width: 900px) {
@@ -652,11 +700,11 @@ button {
         padding: 12px 4%;
     }
 
-    .navbar nav {
+    .nav-links {
         gap: 13px;
     }
 
-    .navbar nav a {
+    .nav-links a {
         font-size: 13px;
     }
 
@@ -664,7 +712,7 @@ button {
         padding: 60px 4%;
     }
 
-    .booking-layout {
+    .booking-container {
         grid-template-columns: 1fr;
     }
 
@@ -677,8 +725,9 @@ button {
     }
 }
 
+
 /* =========================================
-   16. RESPONSIVE DESIGN - MOBILE
+   18. RESPONSIVE DESIGN - MOBILE
 ========================================= */
 
 @media (max-width: 650px) {
@@ -691,12 +740,17 @@ button {
     }
 
     .navbar nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px 16px;
     }
 
-    .navbar nav a {
+    .nav-links a {
         font-size: 12px;
     }
 
@@ -710,11 +764,11 @@ button {
         font-size: 35px;
     }
 
-    .hero-content > p:not(.hero-tag) {
+    .hero-content > p:nth-of-type(2) {
         font-size: 15px;
     }
 
-    .about-grid,
+    .about-container,
     .guidelines-container {
         grid-template-columns: 1fr;
     }
@@ -723,7 +777,7 @@ button {
         padding: 48px 5%;
     }
 
-    .section-heading h2 {
+    .section h2 {
         font-size: 27px;
     }
 
@@ -736,7 +790,7 @@ button {
         width: 100%;
     }
 
-    .booking-form,
+    .booking-form-card,
     .summary-card {
         padding: 22px;
     }
@@ -749,8 +803,12 @@ button {
         width: 100%;
     }
 
-    .booking-page {
-        padding-top: 20px;
+    .summary-item {
+        font-size: 14px;
+    }
+
+    .summary-total {
+        font-size: 17px;
     }
 
     .toast {
@@ -762,11 +820,13 @@ button {
     }
 }
 
+
 /* =========================================
-   17. ACCESSIBILITY - REDUCED MOTION
+   19. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
