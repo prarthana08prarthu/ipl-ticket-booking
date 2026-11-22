@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +10,18 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Responsive Navigation -->
     <header class="navbar">
         <nav>
             <a href="#home" class="logo">IPL 2026</a>
 
-            <ul class="nav-links">
+            <button class="menu-toggle" id="menuToggle" type="button"
+                    aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#matches">Matches</a></li>
                 <li><a href="#booking">Book Ticket</a></li>
@@ -86,114 +91,70 @@
             <h2>IPL Match Schedule</h2>
             <p>Select a match and book your preferred tickets.</p>
 
-            <div class="filter-container">
-                <label for="teamFilter">Filter by Team:</label>
+            <div class="match-toolbar">
+                <div class="filter-container">
+                    <label for="teamFilter">Filter by Team:</label>
+                    <select id="teamFilter">
+                        <option value="all">All Teams</option>
+                        <option value="RCB">RCB</option>
+                        <option value="CSK">CSK</option>
+                        <option value="MI">MI</option>
+                        <option value="KKR">KKR</option>
+                        <option value="SRH">SRH</option>
+                        <option value="RR">RR</option>
+                    </select>
+                </div>
 
-                <select id="teamFilter">
-                    <option value="all">All Teams</option>
-                    <option value="RCB">RCB</option>
-                    <option value="CSK">CSK</option>
-                    <option value="MI">MI</option>
-                    <option value="KKR">KKR</option>
-                    <option value="SRH">SRH</option>
-                    <option value="RR">RR</option>
-                </select>
+                <div class="view-toggle" role="group" aria-label="Choose match layout">
+                    <button type="button" class="view-button active" id="gridViewBtn"
+                            data-view="grid" aria-pressed="true">Grid View</button>
+                    <button type="button" class="view-button" id="listViewBtn"
+                            data-view="list" aria-pressed="false">List View</button>
+                </div>
             </div>
 
-            <p id="filterMessage" aria-live="polite"></p>
+            <p id="filterMessage" class="filter-message" aria-live="polite">5 match(es) found.</p>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Match No.</th>
-                            <th>Teams</th>
-                            <th>Date &amp; Time</th>
-                            <th>Venue</th>
-                            <th>General</th>
-                            <th>Premium</th>
-                            <th>VIP</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
+            <div class="match-grid" id="matchGrid">
+                <article class="match-card" data-teams="RCB CSK">
+                    <div class="match-card-top"><span class="match-number">MATCH 01</span><span class="match-city">Bengaluru</span></div>
+                    <h3>RCB <span>vs</span> CSK</h3>
+                    <p class="match-time">Sample Date · 7:30 PM</p>
+                    <div class="match-prices"><span>General <strong>₹800</strong></span><span>Premium <strong>₹1,500</strong></span><span>VIP <strong>₹3,000</strong></span></div>
+                    <a href="#booking" class="book-match" data-match="RCB vs CSK">Book Tickets</a>
+                </article>
 
-                    <tbody id="matchTableBody">
-                        <tr data-teams="RCB CSK">
-                            <td>01</td>
-                            <td>RCB vs CSK</td>
-                            <td>Sample Date, 7:30 PM</td>
-                            <td>Bengaluru</td>
-                            <td>₹800</td>
-                            <td>₹1,500</td>
-                            <td>₹3,000</td>
-                            <td>
-                                <a href="#booking"
-                                   class="book-match"
-                                   data-match="RCB vs CSK">Book</a>
-                            </td>
-                        </tr>
+                <article class="match-card" data-teams="MI KKR">
+                    <div class="match-card-top"><span class="match-number">MATCH 02</span><span class="match-city">Mumbai</span></div>
+                    <h3>MI <span>vs</span> KKR</h3>
+                    <p class="match-time">Sample Date · 7:30 PM</p>
+                    <div class="match-prices"><span>General <strong>₹900</strong></span><span>Premium <strong>₹1,700</strong></span><span>VIP <strong>₹3,500</strong></span></div>
+                    <a href="#booking" class="book-match" data-match="MI vs KKR">Book Tickets</a>
+                </article>
 
-                        <tr data-teams="MI KKR">
-                            <td>02</td>
-                            <td>MI vs KKR</td>
-                            <td>Sample Date, 7:30 PM</td>
-                            <td>Mumbai</td>
-                            <td>₹900</td>
-                            <td>₹1,700</td>
-                            <td>₹3,500</td>
-                            <td>
-                                <a href="#booking"
-                                   class="book-match"
-                                   data-match="MI vs KKR">Book</a>
-                            </td>
-                        </tr>
+                <article class="match-card" data-teams="CSK MI">
+                    <div class="match-card-top"><span class="match-number">MATCH 03</span><span class="match-city">Chennai</span></div>
+                    <h3>CSK <span>vs</span> MI</h3>
+                    <p class="match-time">Sample Date · 7:30 PM</p>
+                    <div class="match-prices"><span>General <strong>₹850</strong></span><span>Premium <strong>₹1,600</strong></span><span>VIP <strong>₹3,200</strong></span></div>
+                    <a href="#booking" class="book-match" data-match="CSK vs MI">Book Tickets</a>
+                </article>
 
-                        <tr data-teams="CSK MI">
-                            <td>03</td>
-                            <td>CSK vs MI</td>
-                            <td>Sample Date, 7:30 PM</td>
-                            <td>Chennai</td>
-                            <td>₹850</td>
-                            <td>₹1,600</td>
-                            <td>₹3,200</td>
-                            <td>
-                                <a href="#booking"
-                                   class="book-match"
-                                   data-match="CSK vs MI">Book</a>
-                            </td>
-                        </tr>
+                <article class="match-card" data-teams="RCB SRH">
+                    <div class="match-card-top"><span class="match-number">MATCH 04</span><span class="match-city">Bengaluru</span></div>
+                    <h3>RCB <span>vs</span> SRH</h3>
+                    <p class="match-time">Sample Date · 7:30 PM</p>
+                    <div class="match-prices"><span>General <strong>₹800</strong></span><span>Premium <strong>₹1,500</strong></span><span>VIP <strong>₹3,000</strong></span></div>
+                    <a href="#booking" class="book-match" data-match="RCB vs SRH">Book Tickets</a>
+                </article>
 
-                        <tr data-teams="RCB SRH">
-                            <td>04</td>
-                            <td>RCB vs SRH</td>
-                            <td>Sample Date, 7:30 PM</td>
-                            <td>Bengaluru</td>
-                            <td>₹800</td>
-                            <td>₹1,500</td>
-                            <td>₹3,000</td>
-                            <td>
-                                <a href="#booking"
-                                   class="book-match"
-                                   data-match="RCB vs SRH">Book</a>
-                            </td>
-                        </tr>
-
-                        <tr data-teams="KKR RR">
-                            <td>05</td>
-                            <td>KKR vs RR</td>
-                            <td>Sample Date, 7:30 PM</td>
-                            <td>Kolkata</td>
-                            <td>₹900</td>
-                            <td>₹1,700</td>
-                            <td>₹3,500</td>
-                            <td>
-                                <a href="#booking"
-                                   class="book-match"
-                                   data-match="KKR vs RR">Book</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <article class="match-card" data-teams="KKR RR">
+                    <div class="match-card-top"><span class="match-number">MATCH 05</span><span class="match-city">Kolkata</span></div>
+                    <h3>KKR <span>vs</span> RR</h3>
+                    <p class="match-time">Sample Date · 7:30 PM</p>
+                    <div class="match-prices"><span>General <strong>₹900</strong></span><span>Premium <strong>₹1,700</strong></span><span>VIP <strong>₹3,500</strong></span></div>
+                    <a href="#booking" class="book-match" data-match="KKR vs RR">Book Tickets</a>
+                </article>
             </div>
 
             <p class="note">

@@ -1,4 +1,3 @@
-
 /* =========================================
    IPL 2026 TICKET BOOKING WEBSITE
    COMPLETE RESPONSIVE STYLESHEET
@@ -836,5 +835,341 @@ select:focus-visible {
     *::after {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================
+   ACTIVITY 7 - RESPONSIVE MATCH CARDS
+========================================= */
+
+.match-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.match-toolbar .filter-container {
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.view-button {
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    padding: 10px 15px;
+    color: var(--primary);
+    background: var(--white);
+    font-weight: 700;
+}
+
+.view-button.active,
+.view-button:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.filter-message {
+    min-height: 22px;
+    color: var(--success);
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.match-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    padding: 23px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--accent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 25px rgba(16, 27, 63, 0.14);
+}
+
+.match-card[hidden] {
+    display: none !important;
+}
+
+.match-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.match-number {
+    color: #a36c00;
+    letter-spacing: 1px;
+}
+
+.match-card h3 {
+    color: var(--primary);
+    font-size: 25px;
+    margin: 18px 0 4px;
+}
+
+.match-card h3 span {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.match-time {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.match-prices {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: auto;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+}
+
+.match-prices span {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.match-prices strong {
+    color: var(--primary);
+}
+
+.match-card .book-match {
+    display: block;
+    text-align: center;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 800;
+    transition: background 0.2s ease;
+}
+
+.match-card .book-match:hover {
+    background: #ffd36b;
+}
+
+
+/* List View */
+
+.match-grid.list-view {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.match-grid.list-view .match-card {
+    display: grid;
+    grid-template-columns:
+        minmax(110px, 0.7fr)
+        minmax(140px, 1fr)
+        minmax(150px, 1fr)
+        minmax(180px, 1.3fr)
+        minmax(120px, 0.7fr);
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+.match-grid.list-view .match-card h3,
+.match-grid.list-view .match-time {
+    margin: 0;
+}
+
+.match-grid.list-view .match-card-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.match-grid.list-view .match-prices {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 0;
+    padding: 0;
+}
+
+.match-grid.list-view .match-prices span {
+    flex-direction: column;
+    gap: 2px;
+}
+
+
+/* Hamburger Menu */
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 40px;
+    padding: 9px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 6px;
+    background: transparent;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    margin: 4px 0;
+    border-radius: 2px;
+    background: var(--white);
+}
+
+
+/* Tablet Responsive Layout */
+
+@media (max-width: 1000px) {
+
+    .match-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .match-grid.list-view .match-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .match-grid.list-view .match-card-top {
+        flex-direction: row;
+    }
+}
+
+
+/* Mobile Responsive Layout */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        position: sticky;
+        display: block;
+        padding: 12px 5%;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 12px 5% 18px;
+        background: var(--primary);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 11px 4px;
+        font-size: 14px;
+    }
+
+    .hero {
+        margin-top: 0;
+    }
+
+    .match-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .match-toolbar .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .match-toolbar .filter-container select {
+        width: 100%;
+    }
+
+    .view-toggle {
+        width: 100%;
+    }
+
+    .view-button {
+        flex: 1;
+    }
+
+    .match-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .match-grid.list-view .match-card {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .match-grid.list-view .match-card-top {
+        flex-direction: row;
+    }
+
+    .match-grid.list-view .match-card h3 {
+        margin: 12px 0 4px;
+    }
+
+    .match-grid.list-view .match-card .match-time {
+        margin-bottom: 12px;
+    }
+
+    .match-grid.list-view .match-prices {
+        grid-template-columns: 1fr;
+        padding: 12px 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .match-grid.list-view .match-prices span {
+        flex-direction: row;
+    }
+
+    #filterMessage {
+        text-align: left;
     }
 }

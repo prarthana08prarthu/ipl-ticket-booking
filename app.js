@@ -1,8 +1,8 @@
-
 // ==========================================
 // IPL 2026 TICKET BOOKING WEBSITE
 // Activity 5: JavaScript User Interaction
 // Activity 6: Selector Forms and Live Interaction
+// Activity 7: Responsive Layout and View Toggle
 // ==========================================
 
 
@@ -183,6 +183,97 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // ==========================================
+    // Activity 7: Mobile Hamburger Navigation
+    // ==========================================
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener('click', function () {
+
+            const isOpen = navLinks.classList.toggle('open');
+
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+            menuToggle.setAttribute(
+                'aria-label',
+                isOpen ? 'Close navigation menu' : 'Open navigation menu'
+            );
+
+        });
+
+        navLinks.querySelectorAll('a').forEach(function (link) {
+
+            link.addEventListener('click', function () {
+
+                navLinks.classList.remove('open');
+
+                menuToggle.setAttribute('aria-expanded', 'false');
+
+                menuToggle.setAttribute('aria-label', 'Open navigation menu');
+
+            });
+
+        });
+
+    }
+
+
+    // ==========================================
+    // Activity 7: Grid and List View Toggle
+    // ==========================================
+
+    const matchGrid = document.getElementById('matchGrid');
+
+    const gridViewBtn = document.getElementById('gridViewBtn');
+
+    const listViewBtn = document.getElementById('listViewBtn');
+
+
+    function setMatchView(view) {
+
+        if (!matchGrid || !gridViewBtn || !listViewBtn) return;
+
+        const isListView = view === 'list';
+
+        matchGrid.classList.toggle('list-view', isListView);
+
+        gridViewBtn.classList.toggle('active', !isListView);
+
+        listViewBtn.classList.toggle('active', isListView);
+
+        gridViewBtn.setAttribute('aria-pressed', String(!isListView));
+
+        listViewBtn.setAttribute('aria-pressed', String(isListView));
+
+    }
+
+
+    if (gridViewBtn) {
+
+        gridViewBtn.addEventListener('click', function () {
+
+            setMatchView('grid');
+
+        });
+
+    }
+
+
+    if (listViewBtn) {
+
+        listViewBtn.addEventListener('click', function () {
+
+            setMatchView('list');
+
+        });
+
+    }
+
+
+    // ==========================================
     // Activity 5: Smooth Scrolling
     // ==========================================
 
@@ -214,6 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         updateSummary(false);
 
                     }
+
                 }
 
                 bookingSection.scrollIntoView({
@@ -390,57 +482,47 @@ document.addEventListener('DOMContentLoaded', function () {
     // Team Filter
     // ==========================================
 
-    const teamFilter =
-        document.getElementById('teamFilter');
+    const teamFilter = document.getElementById('teamFilter');
 
-    const matchRows =
-        document.querySelectorAll('#matchTableBody tr');
+    const matchCards = document.querySelectorAll('.match-card');
 
-    const filterMessage =
-        document.getElementById('filterMessage');
+    const filterMessage = document.getElementById('filterMessage');
+
+
+    function filterMatches() {
+
+        if (!teamFilter) return;
+
+        const selectedTeam = teamFilter.value;
+
+        let visibleMatches = 0;
+
+        matchCards.forEach(function (card) {
+
+            const teams = (card.dataset.teams || '').split(' ');
+
+            const shouldShow =
+                selectedTeam === 'all' || teams.includes(selectedTeam);
+
+            card.hidden = !shouldShow;
+
+            if (shouldShow) visibleMatches++;
+
+        });
+
+        if (filterMessage) {
+
+            filterMessage.textContent =
+                visibleMatches + ' match(es) found.';
+
+        }
+
+    }
 
 
     if (teamFilter) {
 
-        teamFilter.addEventListener('change', function () {
-
-            const selectedTeam = teamFilter.value;
-
-            let visibleMatches = 0;
-
-            matchRows.forEach(function (row) {
-
-                const teams = row.dataset.teams || '';
-
-                if (
-
-                    selectedTeam === 'all' ||
-
-                    teams.split(' ').includes(selectedTeam)
-
-                ) {
-
-                    row.style.display = '';
-
-                    visibleMatches++;
-
-                } else {
-
-                    row.style.display = 'none';
-
-                }
-
-            });
-
-
-            if (filterMessage) {
-
-                filterMessage.textContent =
-                    visibleMatches + ' match(es) found.';
-
-            }
-
-        });
+        teamFilter.addEventListener('change', filterMatches);
 
     }
 
